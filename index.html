@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caixa de Entrada - Homenagem 💌</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #e68cd8;
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .sidebar li:hover {
+      background-color: #e8eaed;
+    }
+
+    .inbox {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .email {
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s;
+    }
+
+    .email:hover {
+      background-color: #f0f0f0;
+    }
+
+    .email-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+
+    .email-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .email-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .email-preview {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .email-content {
+      display: none;
+      opacity: 0;
+      margin-top: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.5s forwards;
+    }
+
+    .email-content h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .email-content p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .email-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #34a853;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .email-content button:hover {
+      background-color: #2c8e45;
+    }
+
+    @keyframes fadeIn {
+      to {
+        display: block;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Caixa de Entrada</h2>
+    <ul>
+      <li>📥 Entrada</li>
+      <li>📤 Enviados</li>
+      <li>📝 Rascunhos</li>
+      <li>🗑️ Lixeira</li>
+      <li>⚠️ Spam</li>
+    </ul>
+  </div>
+
+  <div class="inbox">
+    <div class="email" onclick="abrirEmail()">
+      <div class="email-header">
+        <div class="email-avatar">T</div>
+        <div>
+          <div class="email-title">Ti 🐵 - Cartinha Besta 💌</div>
+          <div class="email-preview">Tenho uma coisa pra te perguntar...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-content" id="conteudoEmail">
+      <h1>Oi, Desculpa qualquer coisa kkkkkk </h1>
+      <p>Oii, eu tentei não ser emocionado kkkkk, mas acho que não consigo, né? E tipo, sei lá... como já te contaram, sim, eu acabei me apaixonando por você depois de um único beijo, pqp kkkkkkkkkk. Mas acontece, né? Fazer o quê 😅
+E tipo... eu percebi de verdade que tava apaixonado ontem, escutando aquelas músicas que a gente comentou, enquanto eu fazia esse site só pra te chamar pra sair no sábado.
+Fiquei ouvindo todas aquelas músicas, pensando em você, pqp kkkkkkk
+Aí queria saber... você topa sair comigo nesse sábado? 💖 😍</p>
+      <a href="https://wa.me/5511994094277?text=Sim%20eu%20topo%20sair%20com%20você%20💕" target="_blank">
+  <button>Sim, eu topo! 💕</button>
+</a>
+
+    </div>
+  </div>
+
+  <script>
+    function abrirEmail() {
+      const conteudo = document.getElementById("conteudoEmail");
+      conteudo.style.display = "block";
+      conteudo.style.animation = "fadeIn 0.5s forwards";
+    }
+  </script>
+</body>
+</html>
